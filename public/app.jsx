@@ -1,10 +1,14 @@
 
-const GreeterText = React.createClass({
+const CityText = React.createClass({
   render: function () {
     return (
+      
       <div>
-        <h1>First Try Component!</h1>
-        <p>This is the first paragraph in my component</p>
+        
+        <h1>The City of Nairobi to Salt Lake City!</h1>
+        
+        <p>These are the places you need to visit, enjoy the culture and great opportunities! <br/> 
+           Have you seen Shanghai City yet? You should! </p>
 
       </div>
     )
@@ -14,8 +18,8 @@ const GreeterMessage = React.createClass({
   render: function () {
     return (
       <div>
-        <h1>Some H1 Titile</h1>
-        <p>Some Paragraph</p>
+        <h1>Vancouver City to St Cloud Minnesota!</h1>
+        <p>You need to visit these places next. Great community, breath taking view for days!</p>
 
       </div>
     )
@@ -37,10 +41,8 @@ const Greeter = React.createClass({
   onButtonClick: function (e) {
     e.preventDefault()
 
-    const
-      nameRef = this.refs.name
-    const
-      name = nameRef.value
+    const nameRef = this.refs.name
+    const name = nameRef.value
     nameRef.value = ''
 
     if (typeof name === 'string' && name.length > 0) {
@@ -51,10 +53,8 @@ const Greeter = React.createClass({
   },
 
   render: function () {
-    const
-      name = this.state.name
-    const
-      message = this.props.message
+    const name = this.state.name
+    const message = this.props.message
 
     return (
       <div>
@@ -65,7 +65,7 @@ const Greeter = React.createClass({
 
         <p>Learning coding is fun and rewarding!< br /> Ras Joh ! Yoh !</p>
 
-        <GreeterText/>
+        <CityText/>
 
         <GreeterMessage/>
 
@@ -86,8 +86,7 @@ const Greeter = React.createClass({
         </form>
 
       </div >
-    )
-  }
+    )}
 })
 const firstName = 'JohSire'
 const message = 'This is a paragraph made up of words, symbols, character and more.'
