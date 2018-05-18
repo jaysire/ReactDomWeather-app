@@ -11,14 +11,15 @@ var Greeter = React.createClass({
 
     var name = this.refs.name.value
 
-    alert(name)
-  },
+    this.setState({
+      name: name
+    });
 
-  render: function () {
+    render: function () {
     var name = this.props.name
     var message = this.props.message
     return (
-
+ 
       <div>
 
         < h1 > Hello {name}!</h1>
