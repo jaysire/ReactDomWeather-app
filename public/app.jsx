@@ -1,5 +1,6 @@
 var Greeter = React.createClass({
-  getDefaultPropos: function () {
+  // we added a defaul anonymous func so it displays the mesge on the browser when none is set.
+  getDefaultProps: function () {
     return {
       name: 'React'
     }
@@ -17,7 +18,7 @@ var Greeter = React.createClass({
 })
 
 ReactDOM.render(
-  <Greeter/>,
+  <Greeter name='Josire'/>,
   document.getElementById('app')
 )
 
