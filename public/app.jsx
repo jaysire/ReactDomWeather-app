@@ -3,7 +3,7 @@ var Greeter = React.createClass({
   getDefaultProps: function () {
     return {
       name: 'React',
-      message: 'This is our default message! Boooyyyy!'
+      message: 'This is our default message from our prop! Boooyyyy!'
       // message: 'This is the default message!!'
     }
   },
@@ -29,7 +29,7 @@ var Greeter = React.createClass({
 var firstName = 'Ras Joh' // You can pass any kind of data in the component, not just strings.
 
 ReactDOM.render(
-  <Greeter name= {firstName}/>,
+  <Greeter name= {firstName} message='This is a message from our prop!==>!'/>,
   document.getElementById('app')
 )
 
