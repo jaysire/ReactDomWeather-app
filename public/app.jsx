@@ -1,10 +1,21 @@
 var GreeterMessage = React.createClass({
-  render () {
+  render: function () {
     return (
       <div>
         <h1>Some H1</h1>
         <p>Some Paragraph.</p>
       </div>
+    )
+  }
+})
+
+var GreeterForm = React.createClass({
+  render: function () {
+    return (
+      <form>
+        <input type="text" ref="name"/>
+        <button>Set Name</button>
+      </form>
     )
   }
 })
@@ -61,6 +72,9 @@ var Greeter = React.createClass({
           <input type="text" ref="name"/>
           <button>Enter Name</button>
         </form>
+
+        <GreeterForm />
+
       </div>
     )
   }
