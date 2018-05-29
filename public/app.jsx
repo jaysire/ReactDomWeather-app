@@ -1,3 +1,14 @@
+var GreeterMessage = React.createClass({
+  render () {
+    return (
+      <div>
+        <h1>Some H1</h1>
+        <p>Some Paragraph.</p>
+      </div>
+    )
+  }
+})
+
 var Greeter = React.createClass({
   // we assign a default message incase no prop is passed in the class greeter.
   getDefaultProps: function () {
@@ -42,6 +53,9 @@ var Greeter = React.createClass({
       <div>
         <h1>Hello {name}!</h1>
         <p>{message + '!!'}</p>
+
+        {/* Nesting our GreeterMessage Component to our Greeter Component. */}
+        <GreeterMessage />
 
         <form onSubmit={this.onButtonClick}>
           <input type="text" ref="name"/>
