@@ -7,6 +7,13 @@ var Greeter = React.createClass({
       // message: 'This is the default message!!'
     }
   },
+  onButtonClick: function (e) {
+    e.preventDefault()
+
+    var name = this.refs.name.value
+
+    alert(name)
+  },
   render: function () {
     var name = this.props.name
     var message = this.props.message
@@ -15,11 +22,10 @@ var Greeter = React.createClass({
         <h1>Hello {name}!</h1>
         <p>{message + '!<==!'}</p>
 
-
-        {/* <p>This is from the first Component!<br/><br/>...and then one day I got sucked into a warmhole! ...<br/>Consequences Boooyyyyy!! (Key&Peele).</p>
-
-        <h2>YOLO {message}!</h2>
-        <p>Message from the second Component! <br/><br/>...and then one day, a piano fell on my head!... <br/> Consequences Boooyyyyy!! (Key&Peele).</p> */}
+        <form onSubmit={this.onButtonClick}>
+          <input type="text" ref='name' />
+          <button>Enter Name</button>
+        </form>
 
       </div>
     )
