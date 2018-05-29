@@ -1,3 +1,4 @@
+// This is an example of a presentational component. It accesses two props that get passed from it via the parent. It renders them to the screen and its done.
 var GreeterMessage = React.createClass({
   render: function () {
     var name = this.props.name
@@ -11,6 +12,7 @@ var GreeterMessage = React.createClass({
   }
 })
 
+// This is also a Presentational Componnt. Since it also does not maintain its own State. It simply takes some Props, renders the form and when the form gets submited, it calls a function. It doesn't care if the State ever gets updated; all it knows is that its going to get passed on a new name fuction and its going to call it with the name when it gets updated.
 var GreeterForm = React.createClass({
   onFormSubmit: function (e) {
     e.preventDefault()
@@ -33,6 +35,8 @@ var GreeterForm = React.createClass({
   }
 })
 
+// Our Greeter Compnnt is an example of a Containter Compnnt. It maintains State for the application; like the name attribute. & when State gets updated, it updates its children. So if the State gets a new name(user keys in in the form input); Message is going to re-render becz it relies on the 'name' state.
+
 var Greeter = React.createClass({
   // we assign a default message incase no prop is passed in the class greeter.
   getDefaultProps: function () {
@@ -51,7 +55,7 @@ var Greeter = React.createClass({
       name: this.props.name
     }
   },
-
+  // ** State CAN be changed, but Propoerties (prop values to be exact), CANNOT be changed in React.
   handleNewName: function (name) {
     this.setState({
       name: name
@@ -74,6 +78,8 @@ var Greeter = React.createClass({
 
         <GreeterForm onNewName = {this.handleNewName} />
         {/* When you have a 'Parent' handling an 'Event' from the 'Child' you call the 'Parent handle' followed by the 'chosen name' and then you call in the 'Child 'with 'on', followed by the 'chosen name.'  */}
+
+        {/* We only have ONE root div that renders our Chidren only, this is perfect; it's what we want. */}
 
       </div>
     )
