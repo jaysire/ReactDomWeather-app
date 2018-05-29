@@ -1,8 +1,9 @@
 var GreeterMessage = React.createClass({
   render: function () {
+    var name = this.props.name
     return (
       <div>
-        <h1>Hello Salt Lake City!</h1>
+        <h1>Hello {name}!</h1>
         <p>Some Paragraph.</p>
       </div>
     )
@@ -66,11 +67,9 @@ var Greeter = React.createClass({
 
     return (
       <div>
-        <h1>Hello {name}! </h1>
-        <p>{message + '!!'} </p>
 
         {/* Nesting our GreeterMessage Component to our Greeter Component. */}
-        <GreeterMessage />
+        <GreeterMessage name = {name}/>
 
         <GreeterForm onNewName = {this.handleNewName} />
         {/* When you have a 'Parent' handling an 'Event' from the 'Child' you call the 'Parent handle' followed by the 'chosen name' and then you call in the 'Child 'with 'on', followed by the 'chosen name.'  */}
