@@ -19,16 +19,21 @@ var Greeter = React.createClass({
   onButtonClick: function (e) {
     e.preventDefault()
 
-    var name = this.refs.name.value
-    this.refs.name.value = '' // This will clear our form after you input the value in the form.
+    var nameRef = this.refs.name
+    var name = nameRef.value
+    nameRef.value = '' // This will clear our form after you input the value in the form.
 
-    // for React to re-render the Comp we need to call set State: 1) so we can set a new value for 'name' 2). So we can re-render our Component if it depends on the 'name' State; which it does in our example/case.
-
-    // set state takes an obj and only sets the state for the attributes that you provide, and in our case we only have 'name' that is set to the 'name' variable initialized above.
-    this.setState({
-      name: name
-    })
+    if (typeof name === 'string' && name.length > 0) {
+      this.setState({
+        name: name
+      })
+    }
   },
+
+  // for React to re-render the Comp we need to call set State: 1) so we can set a new value for 'name' 2). So we can re-render our Component if it depends on the 'name' State; which it does in our example/case.
+
+  // set state takes an obj and only sets the state for the attributes that you provide, and in our case we only have 'name' that is set to the 'name' variable initialized above.
+
   render: function () {
     var name = this.state.name
     var message = this.props.message
