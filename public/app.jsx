@@ -32,15 +32,21 @@ var GreeterForm = React.createClass({
       updates.message = message
     }
 
-    this.props.onNewName(updates)
+    this.props.onNewData(updates)
   },
 
   render: function () {
     return (
       <form onSubmit={this.onFormSubmit}>
-        <input type="text" ref="name" placeholder='Enter name'/><br/><br/>
-        <textarea ref="message" placeholder='Enter message'></textarea><br/><br/>
-        <button>Set Name & Message</button>
+        <div>
+          <input type="text" ref="name" placeholder='Enter name'/><br/><br/>
+        </div>
+        <div>
+          <textarea ref="message" placeholder='Enter message'></textarea><br/><br/>
+        </div>
+        <div>
+          <button>Push to Submit</button>
+        </div>
       </form>
     )
   }
@@ -68,7 +74,7 @@ var Greeter = React.createClass({
     }
   },
   // ** State CAN be changed, but Propoerties (prop values to be exact), CANNOT be changed in React.
-  handleNewName: function (updates) {
+  handleNewData: function (updates) {
     this.setState(updates)
   },
 
@@ -86,7 +92,7 @@ var Greeter = React.createClass({
         {/* Nesting our GreeterMessage Component to our Greeter Component. */}
         <GreeterMessage name = {name} message = {message}/>
 
-        <GreeterForm onNewName = {this.handleNewName} />
+        <GreeterForm onNewData = {this.handleNewData} />
         {/* When you have a 'Parent' handling an 'Event' from the 'Child' you call the 'Parent handle' followed by the 'chosen name' and then you call in the 'Child 'with 'on', followed by the 'chosen name.'  */}
 
         {/* We only have ONE root div that renders our Chidren only, this is perfect; it's what we want. */}
