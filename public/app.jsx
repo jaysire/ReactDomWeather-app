@@ -1,10 +1,11 @@
 var GreeterMessage = React.createClass({
   render: function () {
     var name = this.props.name
+    var message = this.props.message
     return (
       <div>
         <h1>Hello {name}!</h1>
-        <p>Some Paragraph.</p>
+        <p>Hello! {message}?</p>
       </div>
     )
   }
@@ -69,7 +70,7 @@ var Greeter = React.createClass({
       <div>
 
         {/* Nesting our GreeterMessage Component to our Greeter Component. */}
-        <GreeterMessage name = {name}/>
+        <GreeterMessage name = {name} message = {message}/>
 
         <GreeterForm onNewName = {this.handleNewName} />
         {/* When you have a 'Parent' handling an 'Event' from the 'Child' you call the 'Parent handle' followed by the 'chosen name' and then you call in the 'Child 'with 'on', followed by the 'chosen name.'  */}
@@ -82,7 +83,7 @@ var Greeter = React.createClass({
 var firstName = 'Ras Joh' // You can pass any kind of data in the component, not just strings.
 
 ReactDOM.render(
-  <Greeter name={firstName} message='This is a message from our prop!==>!' />,
+  <Greeter name={firstName} message='This is a message from our prop!==>' />,
   document.getElementById('app')
 )
 
