@@ -6,30 +6,41 @@ var GreeterMessage = React.createClass({
     return (
       <div>
         <h1>Hello {name}!</h1>
-        <p>Hello! {message}?</p>
+        <p>{message}!</p>
       </div>
     )
   }
 })
 
 // This is also a Presentational Componnt. Since it also does not maintain its own State. It simply takes some Props, renders the form and when the form gets submited, it calls a function. It doesn't care if the State ever gets updated; all it knows is that its going to get passed on a new name fuction and its going to call it with the name when it gets updated.
+
 var GreeterForm = React.createClass({
   onFormSubmit: function (e) {
     e.preventDefault()
 
+    var updates = {}
     var name = this.refs.name.value
+    var message = this.refs.message.value
 
     if (name.length > 0) {
       this.refs.name.value = ''
-      this.props.onNewName(name)
+      updates.name = name
     }
+
+    if (message.length > 0) {
+      this.refs.message.value = ''
+      updates.message = message
+    }
+
+    this.props.onNewName(updates)
   },
 
   render: function () {
     return (
       <form onSubmit={this.onFormSubmit}>
-        <input type="text" ref="name"/>
-        <button>Set Name</button>
+        <input type="text" ref="name" placeholder='Enter name'/><br/><br/>
+        <textarea ref="message" placeholder='Enter message'></textarea><br/><br/>
+        <button>Set Name & Message</button>
       </form>
     )
   }
@@ -52,14 +63,13 @@ var Greeter = React.createClass({
 
   getInitialState: function () {
     return {
-      name: this.props.name
+      name: this.props.name,
+      message: this.props.message
     }
   },
   // ** State CAN be changed, but Propoerties (prop values to be exact), CANNOT be changed in React.
-  handleNewName: function (name) {
-    this.setState({
-      name: name
-    })
+  handleNewName: function (updates) {
+    this.setState(updates)
   },
 
   // for React to re-render the Comp we need to call set State: 1) so we can set a new value for 'name' 2). So we can re-render our Component if it depends on the 'name' State; which it does in our example/case.
@@ -68,7 +78,7 @@ var Greeter = React.createClass({
 
   render: function () {
     var name = this.state.name
-    var message = this.props.message
+    var message = this.state.message
 
     return (
       <div>
@@ -89,7 +99,7 @@ var Greeter = React.createClass({
 var firstName = 'Ras Joh' // You can pass any kind of data in the component, not just strings.
 
 ReactDOM.render(
-  <Greeter name={firstName} message='This is a message from our prop!==>' />,
+  <Greeter name={firstName} message='This is a default message from our prop!' />,
   document.getElementById('app')
 )
 
