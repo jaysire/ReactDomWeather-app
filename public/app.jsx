@@ -48,18 +48,11 @@ var Greeter = React.createClass({
       name: this.props.name
     }
   },
-  onButtonClick: function (e) {
-    e.preventDefault()
 
-    var nameRef = this.refs.name
-    var name = nameRef.value
-    nameRef.value = '' // This will clear our form after you input the value in the form.
-
-    if (typeof name === 'string' && name.length > 0) {
-      this.setState({
-        name: name
-      })
-    }
+  handleNewName: function (name) {
+    this.setState({
+      name: name
+    })
   },
 
   // for React to re-render the Comp we need to call set State: 1) so we can set a new value for 'name' 2). So we can re-render our Component if it depends on the 'name' State; which it does in our example/case.
@@ -78,12 +71,7 @@ var Greeter = React.createClass({
         {/* Nesting our GreeterMessage Component to our Greeter Component. */}
         <GreeterMessage />
 
-        <form onSubmit={this.onButtonClick}>
-          <input type="text" ref="name"/>
-          <button>Enter Name</button>
-        </form>
-
-        <GreeterForm />
+        <GreeterForm onNewName={this.handleNewName}/>
 
       </div>
     )
