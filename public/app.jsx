@@ -1,8 +1,8 @@
-// This is an example of a presentational component. It accesses two props that get passed from it via the parent. It renders them to the screen and its done.
-
+// Since we removed the 'script' tags from our div tags, we need to imprt React & ReactDOM to our app.jsx file.
 var React = require('react')
 var ReactDOM = require('react-dom')
 
+// This is an example of a presentational component. It accesses two props that get passed from it via the parent. It renders them to the screen and its done.
 var GreeterMessage = React.createClass({
   render: function () {
     var name = this.props.name
