@@ -1,4 +1,8 @@
 // This is an example of a presentational component. It accesses two props that get passed from it via the parent. It renders them to the screen and its done.
+
+var React = require('react')
+var ReactDOM = require('react-dom')
+
 var GreeterMessage = React.createClass({
   render: function () {
     var name = this.props.name
