@@ -14,16 +14,3 @@ module.exports = {
 }
 
 // This mimicks us running the file/code through the iterm/command line terminal. It only works well when testing short lines of code; but when building an app of to run files of code, we set this up instead.
-
-
-
-
-
-
-
-
-
-
-
-
-
