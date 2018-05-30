@@ -5752,3 +5752,4 @@ node_modules/validate-npm-package-license/README.md
 node_modules/validate-npm-package-license/index.js
 node_modules/validate-npm-package-license/package.json
 node_modules/validate-npm-package-license/test.log
+node_modules/spdx-expression-parse/index.js
