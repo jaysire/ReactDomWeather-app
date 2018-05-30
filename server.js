@@ -1,13 +1,11 @@
-var express = require('express') // nodes key word require.
+var express = require('express') // nodes key word 'require'.
 
-// create our app
+// Create our app
 var app = express()
 
 // tell it which folder we want to serve. helps us add functionality to our app
-var static = express.static('public')
-app.use(static)
+app.use(express.static('public'))
 
-const PORT = 3000
-app.listen(PORT, function () {
-  console.log('Express server is up on port' + ' ' + PORT)
+app.listen(3000, function () {
+  console.log('Express server is up on port 3000')
 })

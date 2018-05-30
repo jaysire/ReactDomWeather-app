@@ -1,6 +1,5 @@
 function greeter () {
-  document.write('This is from the greeter function')
+  document.write('Hello Salt Lake City! From the greeter function.')
 }
 
 module.exports = greeter
-
