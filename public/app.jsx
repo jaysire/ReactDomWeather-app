@@ -3,7 +3,7 @@ var React = require('react')
 var ReactDOM = require('react-dom')
 var Greeter = require('Greeter')
 
-var firstName = 'Ras Joh' // You can pass any kind of data in the component, not just strings.
+var firstName = 'Josiah' // You can pass any kind of data in the component, not just strings.
 
 ReactDOM.render(
   <Greeter name={firstName} message='This is a default message from our prop!' />,

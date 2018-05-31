@@ -51,7 +51,7 @@
 	var ReactDOM = __webpack_require__(158);
 	var Greeter = __webpack_require__(159);
 
-	var firstName = 'Ras Joh'; // You can pass any kind of data in the component, not just strings.
+	var firstName = 'Josiah'; // You can pass any kind of data in the component, not just strings.
 
 	ReactDOM.render(React.createElement(Greeter, { name: firstName, message: 'This is a default message from our prop!' }), document.getElementById('app'));
 
