@@ -1,8 +1,8 @@
 // Our Greeter Compnnt is an example of a Containter Compnnt. It maintains State for the application; like the name attribute. & when State gets updated, it updates its children. So if the State gets a new name(user keys in in the form input); Message is going to re-render becz it relies on the 'name' state.
 
 var React = require('react')
-var GreeterMessage = require('./GreeterMessage')
-var GreeterForm = require('./GreeterForm')
+var GreeterMessage = require('GreeterMessage')
+var GreeterForm = require('GreeterForm')
 
 var Greeter = React.createClass({
   // we assign a default message incase no prop is passed in the class greeter.

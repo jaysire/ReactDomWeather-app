@@ -1,7 +1,7 @@
 // Since we removed the 'script tags' from our 'div tags', we need to import React & ReactDOM to our app.jsx file.
 var React = require('react')
 var ReactDOM = require('react-dom')
-var Greeter = require('./components/Greeter')
+var Greeter = require('Greeter')
 
 var firstName = 'Ras Joh' // You can pass any kind of data in the component, not just strings.
 

@@ -10,6 +10,14 @@ module.exports = {
     filename: './public/bundle.js'
   },
   resolve: {
+    // just like in entry, we have to specify where the resolve should happen. dirname is a variable available to js by default that give you the path to whichever file you are in. In our case it gives us the parth to the 'HelloReact 'main project folder
+    root: __dirname,
+    // With ALIAS we can pick names for our Compnnts; Tell webpack where to find our Compnnts (path), and do all the work behind the scenes
+    alias: {
+      Greeter: 'public/components/Greeter.jsx',
+      GreeterMessage: 'public/components/GreeterMessage.jsx',
+      GreeterForm: 'public/components/GreeterForm.jsx'
+    },
     extensions: ['.js', '.jsx', '']
   },
   // We use bable-loader(a div dependancy - we remove div so we need a loader to convert jsx code to a language our browser can read/convert all our jsx files into ES5 code that we can use today).
