@@ -49,108 +49,7 @@
 	// Since we removed the 'script tags' from our 'div tags', we need to import React & ReactDOM to our app.jsx file.
 	var React = __webpack_require__(1);
 	var ReactDOM = __webpack_require__(158);
-	var GreeterMessage = __webpack_require__(159);
-
-	// This is also a Presentational Componnt. Since it also does not maintain its own State. It simply takes some Props, renders the form and when the form gets submited, it calls a function. It doesn't care if the State ever gets updated; all it knows is that its going to get passed on a new name fuction and its going to call it with the name when it gets updated.
-
-	var GreeterForm = React.createClass({
-	  displayName: 'GreeterForm',
-
-	  onFormSubmit: function onFormSubmit(e) {
-	    e.preventDefault();
-
-	    var updates = {};
-	    var name = this.refs.name.value;
-	    var message = this.refs.message.value;
-
-	    if (name.length > 0) {
-	      this.refs.name.value = '';
-	      updates.name = name;
-	    }
-
-	    if (message.length > 0) {
-	      this.refs.message.value = '';
-	      updates.message = message;
-	    }
-
-	    this.props.onNewData(updates);
-	  },
-
-	  render: function render() {
-	    return React.createElement(
-	      'form',
-	      { onSubmit: this.onFormSubmit },
-	      React.createElement(
-	        'div',
-	        null,
-	        React.createElement('input', { type: 'text', ref: 'name', placeholder: 'Enter name' }),
-	        React.createElement('br', null),
-	        React.createElement('br', null)
-	      ),
-	      React.createElement(
-	        'div',
-	        null,
-	        React.createElement('textarea', { ref: 'message', placeholder: 'Enter message' }),
-	        React.createElement('br', null),
-	        React.createElement('br', null)
-	      ),
-	      React.createElement(
-	        'div',
-	        null,
-	        React.createElement(
-	          'button',
-	          null,
-	          'Push to Submit'
-	        )
-	      )
-	    );
-	  }
-	});
-
-	// Our Greeter Compnnt is an example of a Containter Compnnt. It maintains State for the application; like the name attribute. & when State gets updated, it updates its children. So if the State gets a new name(user keys in in the form input); Message is going to re-render becz it relies on the 'name' state.
-
-	var Greeter = React.createClass({
-	  displayName: 'Greeter',
-
-	  // we assign a default message incase no prop is passed in the class greeter.
-	  getDefaultProps: function getDefaultProps() {
-	    return {
-	      name: 'React',
-	      message: 'This is the default message!'
-	    };
-	  },
-
-	  // React inbuilt method w/ an anonymous func that does not need to take any arguments. it returns an obj that gets set to 'this'dot state very similar to set default props as seen above.
-
-	  // ** Since a Comp is only allowed to maintain/change its state we create the above state where the user will input data/info and Comp will capture the data and render it out/ update our website to reflect the new input info from the client/user.
-
-	  getInitialState: function getInitialState() {
-	    return {
-	      name: this.props.name,
-	      message: this.props.message
-	    };
-	  },
-	  // ** State CAN be changed, but Propoerties (prop values to be exact), CANNOT be changed in React.
-	  handleNewData: function handleNewData(updates) {
-	    this.setState(updates);
-	  },
-
-	  // for React to re-render the Comp we need to call set State: 1) so we can set a new value for 'name' 2). So we can re-render our Component if it depends on the 'name' State; which it does in our example/case.
-
-	  // set state takes an obj and only sets the state for the attributes that you provide, and in our case we only have 'name' that is set to the 'name' variable initialized above.
-
-	  render: function render() {
-	    var name = this.state.name;
-	    var message = this.state.message;
-
-	    return React.createElement(
-	      'div',
-	      null,
-	      React.createElement(GreeterMessage, { name: name, message: message }),
-	      React.createElement(GreeterForm, { onNewData: this.handleNewData })
-	    );
-	  }
-	});
+	var Greeter = __webpack_require__(159);
 
 	var firstName = 'Ras Joh'; // You can pass any kind of data in the component, not just strings.
 
@@ -19873,6 +19772,63 @@
 
 	'use strict';
 
+	// Our Greeter Compnnt is an example of a Containter Compnnt. It maintains State for the application; like the name attribute. & when State gets updated, it updates its children. So if the State gets a new name(user keys in in the form input); Message is going to re-render becz it relies on the 'name' state.
+
+	var React = __webpack_require__(1);
+	var GreeterMessage = __webpack_require__(160);
+	var GreeterForm = __webpack_require__(161);
+
+	var Greeter = React.createClass({
+	  displayName: 'Greeter',
+
+	  // we assign a default message incase no prop is passed in the class greeter.
+	  getDefaultProps: function getDefaultProps() {
+	    return {
+	      name: 'React',
+	      message: 'This is the default message!'
+	    };
+	  },
+
+	  // React inbuilt method w/ an anonymous func that does not need to take any arguments. it returns an obj that gets set to 'this'dot state very similar to set default props as seen above.
+
+	  // ** Since a Comp is only allowed to maintain/change its state we create the above state where the user will input data/info and Comp will capture the data and render it out/ update our website to reflect the new input info from the client/user.
+
+	  getInitialState: function getInitialState() {
+	    return {
+	      name: this.props.name,
+	      message: this.props.message
+	    };
+	  },
+	  // ** State CAN be changed, but Propoerties (prop values to be exact), CANNOT be changed in React.
+	  handleNewData: function handleNewData(updates) {
+	    this.setState(updates);
+	  },
+
+	  // for React to re-render the Comp we need to call set State: 1) so we can set a new value for 'name' 2). So we can re-render our Component if it depends on the 'name' State; which it does in our example/case.
+
+	  // set state takes an obj and only sets the state for the attributes that you provide, and in our case we only have 'name' that is set to the 'name' variable initialized above.
+
+	  render: function render() {
+	    var name = this.state.name;
+	    var message = this.state.message;
+
+	    return React.createElement(
+	      'div',
+	      null,
+	      React.createElement(GreeterMessage, { name: name, message: message }),
+	      React.createElement(GreeterForm, { onNewData: this.handleNewData })
+	    );
+	  }
+	});
+
+	module.exports = Greeter;
+
+/***/ },
+/* 160 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
 	// this is Exporting in ES6.
 	var React = __webpack_require__(1);
 	// This is an example of a Presentational Component. It accesses two props that get passed from it via the parent. It renders them to the screen and its done.
@@ -19904,6 +19860,72 @@
 
 	// Think of this as the return statement inside of a function. When you call a func whatever gets returned is the result you get when you require a file, whatever gets set to module Export is what you get back.
 	module.exports = GreeterMessage;
+
+/***/ },
+/* 161 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	// This is also a Presentational Componnt. Since it also does not maintain its own State. It simply takes some Props, renders the form and when the form gets submited, it calls a function. It doesn't care if the State ever gets updated; all it knows is that its going to get passed on a new name fuction and its going to call it with the name when it gets updated.
+
+	var React = __webpack_require__(1);
+
+	var GreeterForm = React.createClass({
+	  displayName: 'GreeterForm',
+
+	  onFormSubmit: function onFormSubmit(e) {
+	    e.preventDefault();
+
+	    var updates = {};
+	    var name = this.refs.name.value;
+	    var message = this.refs.message.value;
+
+	    if (name.length > 0) {
+	      this.refs.name.value = '';
+	      updates.name = name;
+	    }
+
+	    if (message.length > 0) {
+	      this.refs.message.value = '';
+	      updates.message = message;
+	    }
+
+	    this.props.onNewData(updates);
+	  },
+
+	  render: function render() {
+	    return React.createElement(
+	      'form',
+	      { onSubmit: this.onFormSubmit },
+	      React.createElement(
+	        'div',
+	        null,
+	        React.createElement('input', { type: 'text', ref: 'name', placeholder: 'Enter name' }),
+	        React.createElement('br', null),
+	        React.createElement('br', null)
+	      ),
+	      React.createElement(
+	        'div',
+	        null,
+	        React.createElement('textarea', { ref: 'message', placeholder: 'Enter message' }),
+	        React.createElement('br', null),
+	        React.createElement('br', null)
+	      ),
+	      React.createElement(
+	        'div',
+	        null,
+	        React.createElement(
+	          'button',
+	          null,
+	          'Push to Submit'
+	        )
+	      )
+	    );
+	  }
+	});
+
+	module.exports = GreeterForm;
 
 /***/ }
 /******/ ]);
