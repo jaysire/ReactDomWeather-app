@@ -49,33 +49,7 @@
 	// Since we removed the 'script tags' from our 'div tags', we need to import React & ReactDOM to our app.jsx file.
 	var React = __webpack_require__(1);
 	var ReactDOM = __webpack_require__(158);
-
-	// This is an example of a Presentational Component. It accesses two props that get passed from it via the parent. It renders them to the screen and its done.
-	var GreeterMessage = React.createClass({
-	  displayName: 'GreeterMessage',
-
-	  render: function render() {
-	    var name = this.props.name;
-	    var message = this.props.message;
-	    return React.createElement(
-	      'div',
-	      null,
-	      React.createElement(
-	        'h1',
-	        null,
-	        'Hello ',
-	        name,
-	        '!'
-	      ),
-	      React.createElement(
-	        'p',
-	        null,
-	        message,
-	        '!'
-	      )
-	    );
-	  }
-	});
+	var GreeterMessage = __webpack_require__(159);
 
 	// This is also a Presentational Componnt. Since it also does not maintain its own State. It simply takes some Props, renders the form and when the form gets submited, it calls a function. It doesn't care if the State ever gets updated; all it knows is that its going to get passed on a new name fuction and its going to call it with the name when it gets updated.
 
@@ -19892,6 +19866,44 @@
 
 	module.exports = __webpack_require__(3);
 
+
+/***/ },
+/* 159 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	// this is Exporting in ES6.
+	var React = __webpack_require__(1);
+	// This is an example of a Presentational Component. It accesses two props that get passed from it via the parent. It renders them to the screen and its done.
+	var GreeterMessage = React.createClass({
+	  displayName: 'GreeterMessage',
+
+	  render: function render() {
+	    var name = this.props.name;
+	    var message = this.props.message;
+	    return React.createElement(
+	      'div',
+	      null,
+	      React.createElement(
+	        'h1',
+	        null,
+	        'Hello ',
+	        name,
+	        '!'
+	      ),
+	      React.createElement(
+	        'p',
+	        null,
+	        message,
+	        '!'
+	      )
+	    );
+	  }
+	});
+
+	// Think of this as the return statement inside of a function. When you call a func whatever gets returned is the result you get when you require a file, whatever gets set to module Export is what you get back.
+	module.exports = GreeterMessage;
 
 /***/ }
 /******/ ]);

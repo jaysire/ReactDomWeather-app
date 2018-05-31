@@ -1,20 +1,7 @@
 // Since we removed the 'script tags' from our 'div tags', we need to import React & ReactDOM to our app.jsx file.
 var React = require('react')
 var ReactDOM = require('react-dom')
-
-// This is an example of a Presentational Component. It accesses two props that get passed from it via the parent. It renders them to the screen and its done.
-var GreeterMessage = React.createClass({
-  render: function () {
-    var name = this.props.name
-    var message = this.props.message
-    return (
-      <div>
-        <h1>Hello {name}!</h1>
-        <p>{message}!</p>
-      </div>
-    )
-  }
-})
+var GreeterMessage = require('./components/GreeterMessage')
 
 // This is also a Presentational Componnt. Since it also does not maintain its own State. It simply takes some Props, renders the form and when the form gets submited, it calls a function. It doesn't care if the State ever gets updated; all it knows is that its going to get passed on a new name fuction and its going to call it with the name when it gets updated.
 
