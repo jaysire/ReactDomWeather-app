@@ -53,7 +53,7 @@
 	ReactDOM.render(React.createElement(
 	  'h1',
 	  null,
-	  'Thank God it\'s hump day!'
+	  'Tomorrow is going to be a good day! God willing!'
 	), document.getElementById('app'));
 
 /***/ },
