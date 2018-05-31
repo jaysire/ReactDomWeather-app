@@ -4,7 +4,7 @@
 // 2) The Output: We set an object that takes two props, path to file, and in node.js we can use dirname to get to the file. and file name.
 // Resolve: takes a list of file extensions that we can process and we specify them here (.js; .jsx, empty string meeans find files with no extension).
 module.exports = {
-  entry: './public/app.jsx',
+  entry: './app/app.jsx',
   output: {
     path: __dirname,
     filename: './public/bundle.js'
@@ -14,9 +14,8 @@ module.exports = {
     root: __dirname,
     // With ALIAS we can pick names for our Compnnts; Tell webpack where to find our Compnnts (path), and do all the work behind the scenes
     alias: {
-      Greeter: 'public/components/Greeter.jsx',
-      GreeterMessage: 'public/components/GreeterMessage.jsx',
-      GreeterForm: 'public/components/GreeterForm.jsx'
+      // Greeter: 'public/components/Greeter.jsx', EXAMPLE
+
     },
     extensions: ['.js', '.jsx', '']
   },
