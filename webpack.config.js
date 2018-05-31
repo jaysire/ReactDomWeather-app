@@ -7,10 +7,20 @@ module.exports = {
   },
   resolve: {
     root: __dirname,
+<<<<<<< HEAD
     alias: {
+=======
+
+    alias: {
+
+>>>>>>> c7d7977dcdd73df0dda7c194629ee710c6866c32
     },
-    extensions: ['.js', '.jsx', '']
+    extensions: ['.js', '.jsx', '', 'stage-0']
   },
+<<<<<<< HEAD
+=======
+
+>>>>>>> c7d7977dcdd73df0dda7c194629ee710c6866c32
   module: {
     loaders: [
       {
@@ -22,7 +32,10 @@ module.exports = {
         },
 
         test: /\.jsx?$/,
+<<<<<<< HEAD
 
+=======
+>>>>>>> c7d7977dcdd73df0dda7c194629ee710c6866c32
         exclude: /(node_modules|bower_components)/
       }
     ]

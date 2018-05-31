@@ -50,11 +50,36 @@
 	var ReactDOM = __webpack_require__(158);
 
 	ReactDOM.render(React.createElement(
+<<<<<<< HEAD
 	  'h1',
 	  null,
 	  'Hello Salt Lake City! ',
 	  React.createElement('br', null),
 	  ' What a beatiful sunny morning to be alive!'
+=======
+<<<<<<< HEAD
+	  'h1',
+	  null,
+	  'Tomorrow is going to be a good day! God willing!'
+=======
+	  'div',
+	  null,
+	  React.createElement(
+	    'h1',
+	    null,
+	    'Hello Salt Lake City!'
+	  ),
+	  React.createElement(
+	    'p',
+	    null,
+	    'This is a great time to be alive!',
+	    React.createElement('br', null),
+	    'In everything you do, remember to put God first.',
+	    React.createElement('br', null),
+	    'Everything else will fall in its right place, efortlessly!'
+	  )
+>>>>>>> 26a5f1ae52a506ad22f587a3ea7fac4403fa800e
+>>>>>>> c7d7977dcdd73df0dda7c194629ee710c6866c32
 	), document.getElementById('app'));
 
 /***/ },
