@@ -2,14 +2,19 @@
 var React = require('react')
 var ReactDOM = require('react-dom')
 
+var objOne = {
+  name: 'Josiah',
+  location: 'Salt Lake City'
+}
+
+var objTwo = {
+  age: 28,
+  ...objOne
+}
+
+console.log(objTwo)
+
 ReactDOM.render(
-  <div>
-    <h1>Hello Salt Lake City!</h1>
-    <p>
-    This is a great time to be alive!<br/>
-    In everything you do, remember to put God first.<br/>
-    Everything else will fall in its right place, efortlessly!
-    </p>
-  </div>,
+  <h1>Boilerplate/ Blueprint App</h1>,
   document.getElementById('app')
 )
