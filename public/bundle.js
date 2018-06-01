@@ -26822,33 +26822,28 @@
 
 	module.exports = Main;
 
-	// // We start by importing/ requiring create-react-class;
-	// const createReactClass = require('create-react-class');
-
-	// //  This is the new/ updated way of creating Class Componnts;
-	// const Main = createReactClass({
-	//   render() {
-	//   return ( <h2>This is a text from the Main Component!</h2>
-	//   )},
-	// });
-
-	// module.exports = Main;
-
-	// // This is the old/ outdated syntax of creating React Class Components.
-
-	// // const Main = React.createClass({
-	// //   render() {
-	// //     return (
-	// //       <h2>Main Component!</h2>
-	// //     );
-	// //   },
-	// // });
-
 /***/ },
 /* 86 */
-/***/ function(module, exports) {
+/***/ function(module, exports, __webpack_require__) {
 
-	"use strict";
+	'use strict';
+
+	var React = __webpack_require__(1);
+
+	var createReactClass = __webpack_require__(34);
+
+	var Nav = createReactClass({
+	  displayName: 'Nav',
+	  render: function render() {
+	    return React.createElement(
+	      'h2',
+	      null,
+	      'Text from the Navigation page!'
+	    );
+	  }
+	});
+
+	module.exports = Nav;
 
 /***/ }
 /******/ ]);
