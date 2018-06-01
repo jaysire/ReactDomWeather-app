@@ -1,27 +1,28 @@
 module.exports = {
-  entry: './app/app.jsx',
+  entry: './app/index.js',
   output: {
     path: __dirname,
-    filename: './public/bundle.js'
+    filename: './public/bundle.js',
   },
   resolve: {
     root: __dirname,
     alias: {
-      Main: 'app/components/Main.jsx',
-      Nav: 'app/components/Nav.jsx'
+      App: 'app/App.js',
+      Age: 'app/components/Age.js',
+      Name: 'app/components/Name.js',
     },
-    extensions: ['', '.js', '.jsx']
+    extensions: ['', '.js', '.jsx'],
   },
   module: {
     loaders: [
       {
         loader: 'babel-loader',
         query: {
-          presets: ['react', 'es2015', 'stage-0']
+          presets: ['react', 'es2015', 'stage-0'],
         },
         test: /\.jsx?$/,
-        exclude: /(node_modules|bower_components)/
-      }
-    ]
-  }
-}
+        exclude: /(node_modules|bower_components)/,
+      },
+    ],
+  },
+};
