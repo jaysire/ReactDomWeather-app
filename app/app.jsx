@@ -1,4 +1,5 @@
 const React = require('react');
+import { everything } from '../public/bundle';
 const ReactDOM = require('react-dom');
 // const PropTypes = require('prop-types');
 const {
@@ -26,3 +27,8 @@ ReactDOM.render(
   </Router>,
   document.getElementById('app'),
 );
+
+//  Everything gets rendered out thru this page/ router componenet
+// First thing we add is the Router history which tells react router that we want to use(in our page url/path) the pound sign(#) followed by the path provided in order to maintain the routes for our app.
+// Route: matches everything and it renders our the main compnnt and inised of it we have a few other matchers.
+// e.g forward slash "about" matches the About componnt and renders it out. And so on and so forth. and if we dont click/match it with any other page, 'Weather' is rendered out/ displayed by default. It's our home/landing page.
