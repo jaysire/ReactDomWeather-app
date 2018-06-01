@@ -47,20 +47,28 @@
 	'use strict';
 
 	var React = __webpack_require__(1);
-	var ReactDOM = __webpack_require__(12);
-	// const PropTypes = require('prop-types');
 
+	var ReactDOM = __webpack_require__(12);
+
+	// const PropTypes = require('prop-types');
 
 	var _require = __webpack_require__(25),
 	    Route = _require.Route,
 	    Router = _require.Router,
 	    IndexRoute = _require.IndexRoute,
 	    hashHistory = _require.hashHistory;
+	// the above obj distructuring syntax is the same as this but for each of our variables:      const Route = require('react-router').Route
+
+	var Main = __webpack_require__(85);
 
 	ReactDOM.render(React.createElement(
-	  'h1',
-	  null,
-	  'Thank you GOD!!'
+	  Router,
+	  { history: hashHistory },
+	  React.createElement(
+	    Route,
+	    { path: '/', component: Main },
+	    ','
+	  )
 	), document.getElementById('app'));
 
 /***/ },
@@ -26780,6 +26788,37 @@
 	  });
 	};
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
+
+/***/ },
+/* 85 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var React = __webpack_require__(1);
+
+	var createReactClass = __webpack_require__(34);
+
+	var Main = createReactClass({
+	  displayName: 'Main',
+	  render: function render() {
+	    return React.createElement(
+	      'h2',
+	      null,
+	      'This is a message from the Main Component!......Wazzzzzzzzuuuuuuuuppppppppppp!!!!!'
+	    );
+	  }
+	});
+
+	// const Main = React.createClass({
+	//   render() {
+	//     return (
+	//       <h2>Main Component!</h2>
+	//     );
+	//   },
+	// });
+
+	module.exports = Main;
 
 /***/ }
 /******/ ]);
