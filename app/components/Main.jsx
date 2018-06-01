@@ -9,7 +9,9 @@ const Main = createReactClass({
     return (
       <div>
         <Nav />
-        <h2>Hello Salt Lake City! From the Main Component!Waazzzuuupppp!!!!</h2>
+        <h2>
+          Hello Salt Lake City! From the Main Component!Waazzzuuupppp!!!!
+        </h2>
         {this.props.children}
       </div>
     )},
