@@ -1,8 +1,14 @@
-import React from 'react';
-import Name from './components/Name';
+const React = require('react');
+const ReactDOM = require('react-dom');
+// const PropTypes = require('prop-types');
 
-const App = () => (
-  <Name />
+
+const {
+  Route, Router, IndexRoute, hashHistory,
+} = require('react-router');
+
+
+ReactDOM.render(
+  <h1>Thank you GOD!!</h1>,
+  document.getElementById('app'),
 );
-
-export default App;
