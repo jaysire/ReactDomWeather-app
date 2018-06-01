@@ -12,6 +12,7 @@ const Nav = createReactClass ({
         <h2>Good Morning Salt Lake City! Text from the Nav page! YOLO!!!</h2>
         <Link to="/">Get Weather</Link>
         <Link to="/about">About</Link>
+        <Link to="/examples">Examples</Link>
       </div>
     );},
 });

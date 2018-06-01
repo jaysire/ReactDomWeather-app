@@ -64,6 +64,8 @@
 
 	var About = __webpack_require__(88);
 
+	var Examples = __webpack_require__(89);
+
 	ReactDOM.render(React.createElement(
 	  Router,
 	  { history: hashHistory },
@@ -71,6 +73,7 @@
 	    Route,
 	    { path: '/', component: Main },
 	    React.createElement(Route, { path: 'about', component: About }),
+	    React.createElement(Route, { path: 'examples', component: Examples }),
 	    React.createElement(IndexRoute, { component: Weather })
 	  )
 	), document.getElementById('app'));
@@ -26803,10 +26806,8 @@
 
 	var Nav = __webpack_require__(86);
 
-	// We start by importing/ requiring create-react-class;
 	var createReactClass = __webpack_require__(34);
 
-	//  This is the new/ updated way of creating Class Componnts;
 	var Main = createReactClass({
 	  displayName: 'Main',
 	  render: function render() {
@@ -26861,6 +26862,11 @@
 	        Link,
 	        { to: '/about' },
 	        'About'
+	      ),
+	      React.createElement(
+	        Link,
+	        { to: '/examples' },
+	        'Examples'
 	      )
 	    );
 	  }
@@ -26913,6 +26919,29 @@
 	});
 
 	module.exports = About;
+
+/***/ },
+/* 89 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var React = __webpack_require__(1);
+
+	var createReactClass = __webpack_require__(34);
+
+	var Examples = createReactClass({
+	  displayName: 'Examples',
+	  render: function render() {
+	    return React.createElement(
+	      'h3',
+	      null,
+	      'Examples Component!...Check!!! No NIKEY!'
+	    );
+	  }
+	});
+
+	module.exports = Examples;
 
 /***/ }
 /******/ ]);
