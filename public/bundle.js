@@ -26797,8 +26797,10 @@
 
 	var React = __webpack_require__(1);
 
+	// We start by importing/ requiring create-react-class;
 	var createReactClass = __webpack_require__(34);
 
+	//  This is the new/ updated way of creating Class Componnts;
 	var Main = createReactClass({
 	  displayName: 'Main',
 	  render: function render() {
@@ -26810,6 +26812,10 @@
 	  }
 	});
 
+	module.exports = Main;
+
+	// This is the old/ outdated syntax of creating React Class Components.
+
 	// const Main = React.createClass({
 	//   render() {
 	//     return (
@@ -26817,8 +26823,6 @@
 	//     );
 	//   },
 	// });
-
-	module.exports = Main;
 
 /***/ }
 /******/ ]);
