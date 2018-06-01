@@ -47,9 +47,7 @@
 	'use strict';
 
 	var React = __webpack_require__(1);
-
 	var ReactDOM = __webpack_require__(12);
-
 	// const PropTypes = require('prop-types');
 
 	var _require = __webpack_require__(25),
@@ -57,10 +55,12 @@
 	    Router = _require.Router,
 	    IndexRoute = _require.IndexRoute,
 	    hashHistory = _require.hashHistory;
-	// the above obj distructuring syntax is the same as this but for each of our variables:      const Route = require('react-router').Route
+	// the above obj distructuring syntax is the same as this but for each of our variables:
+	// const Route = require('react-router').Route
 
 	var Main = __webpack_require__(85);
-	var Nav = __webpack_require__(86);
+
+	var Weather = __webpack_require__(87);
 
 	ReactDOM.render(React.createElement(
 	  Router,
@@ -68,7 +68,7 @@
 	  React.createElement(
 	    Route,
 	    { path: '/', component: Main },
-	    ','
+	    React.createElement(IndexRoute, { component: Weather })
 	  )
 	), document.getElementById('app'));
 
@@ -26814,8 +26814,9 @@
 	      React.createElement(
 	        'h2',
 	        null,
-	        'This is a text from the Main Component!'
-	      )
+	        'Hello Salt Lake City! From the Main Component!Waazzzuuupppp!!!!'
+	      ),
+	      this.props.children
 	    );
 	  }
 	});
@@ -26838,12 +26839,35 @@
 	    return React.createElement(
 	      'h2',
 	      null,
-	      'Text from the Navigation page!'
+	      'Good Morning Salt Lake City! Text from the Nav page! YOLO!!!'
 	    );
 	  }
 	});
 
 	module.exports = Nav;
+
+/***/ },
+/* 87 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var React = __webpack_require__(1);
+
+	var createReactClass = __webpack_require__(34);
+
+	var Weather = createReactClass({
+	  displayName: 'Weather',
+	  render: function render() {
+	    return React.createElement(
+	      'h3',
+	      null,
+	      'This is our Weather Component! HHEEEEEYYYYOOOOO!!'
+	    );
+	  }
+	});
+
+	module.exports = Weather;
 
 /***/ }
 /******/ ]);

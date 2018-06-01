@@ -5,7 +5,7 @@ const createReactClass = require('create-react-class');
 const Nav = createReactClass ({
   render() {
     return (
-      <h2>Text from the Navigation page!</h2>
+      <h2>Good Morning Salt Lake City! Text from the Nav page! YOLO!!!</h2>
     );}
 });
 

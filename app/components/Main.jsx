@@ -11,7 +11,8 @@ const Main = createReactClass({
     return (
       <div>
         <Nav />
-        <h2>This is a text from the Main Component!</h2>
+        <h2>Hello Salt Lake City! From the Main Component!Waazzzuuupppp!!!!</h2>
+        {this.props.children}
       </div>
     )},
 });
