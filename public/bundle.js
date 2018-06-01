@@ -60,6 +60,7 @@
 	// the above obj distructuring syntax is the same as this but for each of our variables:      const Route = require('react-router').Route
 
 	var Main = __webpack_require__(85);
+	var Nav = __webpack_require__(86);
 
 	ReactDOM.render(React.createElement(
 	  Router,
@@ -26797,6 +26798,8 @@
 
 	var React = __webpack_require__(1);
 
+	var Nav = __webpack_require__(86);
+
 	// We start by importing/ requiring create-react-class;
 	var createReactClass = __webpack_require__(34);
 
@@ -26805,24 +26808,47 @@
 	  displayName: 'Main',
 	  render: function render() {
 	    return React.createElement(
-	      'h2',
+	      'div',
 	      null,
-	      'This is a message from the Main Component!......Wazzzzzzzzuuuuuuuuppppppppppp!!!!!'
+	      React.createElement(Nav, null),
+	      React.createElement(
+	        'h2',
+	        null,
+	        'This is a text from the Main Component!'
+	      )
 	    );
 	  }
 	});
 
 	module.exports = Main;
 
-	// This is the old/ outdated syntax of creating React Class Components.
+	// // We start by importing/ requiring create-react-class;
+	// const createReactClass = require('create-react-class');
 
-	// const Main = React.createClass({
+	// //  This is the new/ updated way of creating Class Componnts;
+	// const Main = createReactClass({
 	//   render() {
-	//     return (
-	//       <h2>Main Component!</h2>
-	//     );
-	//   },
+	//   return ( <h2>This is a text from the Main Component!</h2>
+	//   )},
 	// });
+
+	// module.exports = Main;
+
+	// // This is the old/ outdated syntax of creating React Class Components.
+
+	// // const Main = React.createClass({
+	// //   render() {
+	// //     return (
+	// //       <h2>Main Component!</h2>
+	// //     );
+	// //   },
+	// // });
+
+/***/ },
+/* 86 */
+/***/ function(module, exports) {
+
+	"use strict";
 
 /***/ }
 /******/ ]);
