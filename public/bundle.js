@@ -62,12 +62,15 @@
 
 	var Weather = __webpack_require__(87);
 
+	var About = __webpack_require__(88);
+
 	ReactDOM.render(React.createElement(
 	  Router,
 	  { history: hashHistory },
 	  React.createElement(
 	    Route,
 	    { path: '/', component: Main },
+	    React.createElement(Route, { path: 'about', component: About }),
 	    React.createElement(IndexRoute, { component: Weather })
 	  )
 	), document.getElementById('app'));
@@ -26831,15 +26834,34 @@
 
 	var React = __webpack_require__(1);
 
+	// links helps us link/ wire all our pages to-each-other so they can communicate.
+
+	var _require = __webpack_require__(25),
+	    Link = _require.Link;
+
 	var createReactClass = __webpack_require__(34);
 
 	var Nav = createReactClass({
 	  displayName: 'Nav',
 	  render: function render() {
 	    return React.createElement(
-	      'h2',
+	      'div',
 	      null,
-	      'Good Morning Salt Lake City! Text from the Nav page! YOLO!!!'
+	      React.createElement(
+	        'h2',
+	        null,
+	        'Good Morning Salt Lake City! Text from the Nav page! YOLO!!!'
+	      ),
+	      React.createElement(
+	        Link,
+	        { to: '/' },
+	        'Get Weather'
+	      ),
+	      React.createElement(
+	        Link,
+	        { to: '/about' },
+	        'About'
+	      )
 	    );
 	  }
 	});
@@ -26868,6 +26890,29 @@
 	});
 
 	module.exports = Weather;
+
+/***/ },
+/* 88 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var React = __webpack_require__(1);
+
+	var createReactClass = __webpack_require__(34);
+
+	var About = createReactClass({
+	  displayName: 'About',
+	  render: function render() {
+	    return React.createElement(
+	      'h3',
+	      null,
+	      'How about that ABOUT page!?!'
+	    );
+	  }
+	});
+
+	module.exports = About;
 
 /***/ }
 /******/ ]);

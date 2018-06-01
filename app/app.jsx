@@ -11,9 +11,13 @@ const Main = require('Main');
 
 const Weather = require('Weather');
 
+const About = require('About');
+
+
 ReactDOM.render(
   <Router history={hashHistory}>
     <Route path="/" component={Main}>
+      <Route path="about" component={About} />
       <IndexRoute component={Weather} />
     </Route>
   </Router>,
