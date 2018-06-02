@@ -10,12 +10,11 @@ const Nav = createReactClass({
     return (
       <div>
         <h2>
-          Nav Component
+          Where is the Nav system?!
         </h2>
-        <Link to="/" activeClassName="active">Get Weather</Link>
-        <Link to="/about" activeClassName="active">About</Link>
+        <Link to="/">Get Weather</Link>
+        <Link to="/about">About</Link>
         <Link to="/examples" activeClassName="active">Examples</Link>
-        <a href="#/about">Got to About</a>
       </div>
     );
   },

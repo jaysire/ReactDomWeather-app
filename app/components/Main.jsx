@@ -10,7 +10,7 @@ const Main = createReactClass({
       <div>
         <Nav />
         <h2>
-          Main Component
+          Obviously you the Main thing here!
         </h2>
         {this.props.children}
       </div>

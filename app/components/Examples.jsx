@@ -6,7 +6,7 @@ const createReactClass = require('create-react-class');
 const Examples = createReactClass({
   render() {
     return (
-      <h3>Examples Component!</h3>
+      <h3>Maybe give you an example?</h3>
     )},
 });
 
