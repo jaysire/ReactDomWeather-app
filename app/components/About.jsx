@@ -5,7 +5,7 @@ const createReactClass = require('create-react-class');
 const About = createReactClass ({
   render() { 
     return (
-      <h3>How about that ABOUT page!?!</h3>
+      <h3>This is the About Component</h3>
   )}
 });
 

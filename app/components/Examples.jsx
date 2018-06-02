@@ -6,7 +6,7 @@ const createReactClass = require('create-react-class');
 const Examples = createReactClass({
   render() {
     return (
-      <h3>Examples Component!...Check!!! No NIKEY!</h3>
+      <h3>Examples Component!</h3>
     )},
 });
 
