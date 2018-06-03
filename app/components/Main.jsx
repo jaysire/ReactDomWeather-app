@@ -16,7 +16,3 @@ const Main = createReactClass({
 });
 
 module.exports = Main;
-
-
-
-

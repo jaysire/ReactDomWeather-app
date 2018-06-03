@@ -12,4 +12,3 @@ const Weather = createReactClass({
 
 module.exports = Weather;
 
-
