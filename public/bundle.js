@@ -26884,6 +26884,9 @@
 
 	var Weather = createReactClass({
 	  displayName: 'Weather',
+	  handleSearch: function handleSearch(location) {
+	    alert(location);
+	  },
 	  render: function render() {
 	    return React.createElement(
 	      'div',
@@ -26893,7 +26896,7 @@
 	        null,
 	        'Weather Component'
 	      ),
-	      React.createElement(WeatherForm, null),
+	      React.createElement(WeatherForm, { onSearch: this.handleSearch }),
 	      React.createElement(WeatherMessage, null)
 	    );
 	  }
@@ -26916,33 +26919,32 @@
 	  onFormSubmit: function onFormSubmit(e) {
 	    e.preventDefault();
 
-	    var updates = {};
-	    var name = this.refs.name.value;
-	    var message = this.refs.message.value;
-
-	    if (name.length > 0) {
-	      this.refs.name.value = '';
-	      updates.name = name;
+	    var location = this.refs.location.value;
+	    // const message = this.refs.message.value;
+	    // we check if the location is  valied, and if it is then we call the Parent search function for the location which is in the Parent Component- which is the Weather jsx file in our case.
+	    if (location.length > 0) {
+	      this.refs.location.value = '';
+	      this.props.onSearch(location);
 	    }
-
-	    if (message.length > 0) {
-	      this.refs.message.value = '';
-	      updates.message = message;
-	    }
-
-	    this.props.onNewData(updates);
 	  },
+
+
+	  //   if (message.length > 0) {
+	  //     this.refs.message.value = '';
+	  //     updates.message = message;
+	  //   }
+
+	  //   this.props.onNewData(updates);
+	  // },
+
 	  render: function render() {
 	    return React.createElement(
-	      'form',
-	      { onSubmit: this.onFormSubmit },
+	      'div',
+	      null,
 	      React.createElement(
-	        'div',
-	        null,
-	        React.createElement('input', { type: 'text', ref: 'name', placeholder: 'Enter city name' }),
-	        ' ',
-	        React.createElement('br', null),
-	        React.createElement('br', null),
+	        'form',
+	        { onSubmit: this.onFormSubmit },
+	        React.createElement('input', { type: 'text', ref: 'location', placeholder: 'Enter city name' }),
 	        React.createElement('div', null),
 	        React.createElement(
 	          'button',

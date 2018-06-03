@@ -5,35 +5,35 @@ const createReactClass = require('create-react-class');
 const WeatherForm = createReactClass({
   onFormSubmit(e) {
     e.preventDefault();
-
-    const updates = {};
-    const name = this.refs.name.value;
-    const message = this.refs.message.value;
-
-    if (name.length > 0) {
-      this.refs.name.value = '';
-      updates.name = name;
+    
+    const location = this.refs.location.value;
+    // const message = this.refs.message.value;
+// we check if the location is  valied, and if it is then we call the Parent search function for the location which is in the Parent Component- which is the Weather jsx file in our case.
+    if (location.length > 0) {
+      this.refs.location.value = '';
+      this.props.onSearch(location);
     }
+    },
 
-    if (message.length > 0) {
-      this.refs.message.value = '';
-      updates.message = message;
-    }
+  //   if (message.length > 0) {
+  //     this.refs.message.value = '';
+  //     updates.message = message;
+  //   }
 
-    this.props.onNewData(updates);
-  },
+  //   this.props.onNewData(updates);
+  // },
 
   render() {
     return (
+      <div>
       <form onSubmit={this.onFormSubmit}>
-        <div>
-          <input type="text" ref="name" placeholder="Enter city name" /> <br/><br/>
+          <input type="text" ref="location" placeholder="Enter city name" />
           <div />
           <button>Get Weather</button>
-        </div>
       </form>
+      </div>
     );
-  },
+  }
 });
 
 module.exports = WeatherForm;
