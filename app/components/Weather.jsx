@@ -4,6 +4,9 @@ const WeatherForm = require('WeatherForm');
 
 const WeatherMessage = require('WeatherMessage');
 
+const openWeatherMap = require('openWeatherMap');
+
+
 const createReactClass = require('create-react-class');
 
 const Weather = createReactClass({
@@ -14,7 +17,7 @@ const Weather = createReactClass({
     }
   },
   handleSearch(location) {
-    
+    openWeatherMap
     // this.setState({
     //   location,
     //   temp: 23,
