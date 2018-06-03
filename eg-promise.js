@@ -9,19 +9,18 @@ getTempCallback('Philadelphia', (err, temp) => {
   } else {
     console.log('success', temp);
   }
-});
 
-function getTempPromise(location) {
-  return new Promise(((resolve, reject) => {
+function getTempPromise (location) {
+  return new Promise((resolve, reject) => {
     setTimeout(() => {
       resolve(79);
       reject('City not found');
-    });
-  }));
+    }, 1000);
+  })
 }
 
 getTempPromise('Philadelphia').then((temp) => {
-  console.log('Promise success', temp)
+  console.log('Promise success', temp);
 }, (err) => {
   console.log('Promise error', err);
 });
@@ -30,4 +29,7 @@ getTempPromise('Philadelphia').then((temp) => {
 // this ensures we can't have both instancese of successs & error/ failutre, happening at the same time as it was in the case with the getTempCallback. (two codes dont get fired at the same time).
 // Eventhough resolve & reject were both called the Promise can ONLY complete once/ only run instance at a time. i.e either reject or resolve, but NOT BOTH at the same time or one instance called twice.
 // then is a Promise inbuit method that takes two functions which each take one parameter.
-//  We fake delay/ simulate delay using setTimeout and it takes a function to run.
+
+// NOTE: Since in these cases  we resolve or reject or call the callback right away, thus eliminating the need for using callback or Promise. Thus we fake the delay using setTimeout.
+//  We fake/ simulate delay using setTimeout and it takes a function to run.
+// 1000 miliseconds = 1 second.
