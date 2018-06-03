@@ -28,6 +28,6 @@ getTempPromise('Philadelphia').then((temp) => {
 
 // The first Promise function returns a 'new Promise instance' which takes two parameters: resolve and reject.
 // this ensures we can't have both instancese of successs & error/ failutre, happening at the same time as it was in the case with the getTempCallback. (two codes dont get fired at the same time).
-// Eventhough resolve & reject were both called the Promise can ONLY complete once/ only run instance at a time. i.e either reject or resolve, but NOT BOTH at the same time.
+// Eventhough resolve & reject were both called the Promise can ONLY complete once/ only run instance at a time. i.e either reject or resolve, but NOT BOTH at the same time or one instance called twice.
 // then is a Promise inbuit method that takes two functions which each take one parameter.
 //  We fake delay/ simulate delay using setTimeout and it takes a function to run.
