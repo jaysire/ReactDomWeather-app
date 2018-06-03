@@ -4,7 +4,7 @@ const createReactClass = require('create-react-class');
 const About = createReactClass({
     render: function(){
         return (
-          <h3>About Component</h3>
+          <h3>This is the About Component</h3>
         );
     }
 });

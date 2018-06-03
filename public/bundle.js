@@ -26812,7 +26812,7 @@
 	      React.createElement(
 	        'h2',
 	        null,
-	        'Main Component'
+	        'Where is the Main Component?'
 	      ),
 	      this.props.children
 	    );
@@ -26845,7 +26845,7 @@
 	      React.createElement(
 	        'h2',
 	        null,
-	        'Nav Component'
+	        'How about that Nav Component'
 	      ),
 	      React.createElement(
 	        IndexLink,
@@ -26885,7 +26885,7 @@
 	    return React.createElement(
 	      'h3',
 	      null,
-	      'New Weather Channel'
+	      'Great Weather Channel!'
 	    );
 	  }
 	});
@@ -26908,7 +26908,7 @@
 	        return React.createElement(
 	            'h3',
 	            null,
-	            'About Component'
+	            'This is the About Component'
 	        );
 	    }
 	});
@@ -26926,15 +26926,14 @@
 	var createReactClass = __webpack_require__(34);
 
 	var Examples = createReactClass({
-	    displayName: 'Examples',
-
-	    render: function render() {
-	        return React.createElement(
-	            'h3',
-	            null,
-	            'Examples Component'
-	        );
-	    }
+	  displayName: 'Examples',
+	  render: function render() {
+	    return React.createElement(
+	      'h3',
+	      null,
+	      'It\'s the Examples Component'
+	    );
+	  }
 	});
 
 	module.exports = Examples;
