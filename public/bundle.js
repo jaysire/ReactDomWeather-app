@@ -26880,12 +26880,40 @@
 
 	var Weather = createReactClass({
 	  displayName: 'Weather',
+	  onFormSubmit: function onFormSubmit(e) {
+	    e.preventDefault();
 
+	    var updates = {};
+	    var name = this.refs.name.value;
+	    var message = this.refs.message.value;
+
+	    if (message.length > 0) {
+	      this.refs.message.value = '';
+	      updates.message = message;
+	    }
+
+	    this.props.oneNewData(updates);
+	  },
 	  render: function render() {
 	    return React.createElement(
-	      'h3',
-	      null,
-	      'Great Weather Channel!'
+	      'form',
+	      { onSubmit: this.onFormSubmit },
+	      React.createElement(
+	        'div',
+	        null,
+	        React.createElement('textarea', { ref: 'message', placeholder: 'Enter city name' }),
+	        React.createElement('br', null),
+	        React.createElement('br', null)
+	      ),
+	      React.createElement(
+	        'div',
+	        null,
+	        React.createElement(
+	          'button',
+	          null,
+	          'Get Weather'
+	        )
+	      )
 	    );
 	  }
 	});

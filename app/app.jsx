@@ -8,6 +8,8 @@ const Weather = require('Weather');
 const About = require('About');
 const Examples = require('Examples');
 
+
+
 ReactDOM.render(
   <Router history={hashHistory}>
     <Route path="/" component={Main}>
