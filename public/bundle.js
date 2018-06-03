@@ -26891,10 +26891,11 @@
 	    };
 	  },
 	  handleSearch: function handleSearch(location) {
-	    this.setState({
-	      location: location,
-	      temp: 23
-	    });
+
+	    // this.setState({
+	    //   location,
+	    //   temp: 23,
+	    // });
 	  },
 	  render: function render() {
 	    // this is how you pull/ access the state values (in our case, temo and location), so you can pass them as props thru our WeatherMessage component. ES6 distructuring.
