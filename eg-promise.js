@@ -44,9 +44,9 @@ addPromise(5, 5).then((sum) => {
   console.log('error', err);
 });
 
-addPromise('josiah', 9).then(function (sum) {
+addPromise('josiah', 9).then((sum) => {
   console.log('this should not show up');
-}, function (err) {
+}, (err) => {
   console.log('WARNING!! ERROR!! CANNOT COMPUTE!!', err);
 });
 

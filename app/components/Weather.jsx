@@ -7,15 +7,27 @@ const WeatherMessage = require('WeatherMessage');
 const createReactClass = require('create-react-class');
 
 const Weather = createReactClass({
-  handleSearch (location) {
-    alert(location);
+  getInitialState () {
+    return {
+      location: "Miami",
+      temp: 88,
+    }
+  },
+  handleSearch(location) {
+    this.setState({
+      location,
+      temp: 23,
+    });
   },
   render() {
+    // this is how you pull/ access the state values (in our case, temo and location), so you can pass them as props thru our WeatherMessage component. ES6 distructuring.
+    const {temp, location} = this.state;
     return (
       <div>
         <h3>Weather Component</h3>
         <WeatherForm onSearch={this.handleSearch} />
-        <WeatherMessage />
+        <WeatherMessage temp={temp} location={location}/>
+        {/* we pass temp and location props thru WForm compnnt and set them to temp and location variables, that we just accessed/ made available above. Hence being our Classic Presentational Comp: i.e all it does is take the two variables (temp and loctn) and render them to the screen */}
       </div>
     );
   },

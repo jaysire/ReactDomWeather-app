@@ -26884,10 +26884,24 @@
 
 	var Weather = createReactClass({
 	  displayName: 'Weather',
+	  getInitialState: function getInitialState() {
+	    return {
+	      location: "Miami",
+	      temp: 88
+	    };
+	  },
 	  handleSearch: function handleSearch(location) {
-	    alert(location);
+	    this.setState({
+	      location: location,
+	      temp: 23
+	    });
 	  },
 	  render: function render() {
+	    // this is how you pull/ access the state values (in our case, temo and location), so you can pass them as props thru our WeatherMessage component. ES6 distructuring.
+	    var _state = this.state,
+	        temp = _state.temp,
+	        location = _state.location;
+
 	    return React.createElement(
 	      'div',
 	      null,
@@ -26897,7 +26911,7 @@
 	        'Weather Component'
 	      ),
 	      React.createElement(WeatherForm, { onSearch: this.handleSearch }),
-	      React.createElement(WeatherMessage, null)
+	      React.createElement(WeatherMessage, { temp: temp, location: location })
 	    );
 	  }
 	});
@@ -26971,10 +26985,18 @@
 	var WeatherMessage = createReactClass({
 	  displayName: 'WeatherMessage',
 	  render: function render() {
+	    var _props = this.props,
+	        temp = _props.temp,
+	        location = _props.location;
+
 	    return React.createElement(
 	      'h3',
 	      null,
-	      'It\'s 40 in Salt Lake City!'
+	      'It\'s ',
+	      temp,
+	      ' in ',
+	      location,
+	      '!'
 	    );
 	  }
 	});
