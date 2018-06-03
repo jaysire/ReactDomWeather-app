@@ -2,17 +2,12 @@ const React = require('react');
 
 const createReactClass = require('create-react-class');
 
-const WeatherText = React.createClass({
+const WeatherMessage = createReactClass({
   render() {
-    const name = this.props.name;
-    const message = this.props.message;
-    return (
-      <div>
-        <h1>Hello {name}!</h1>
-        <p>{message}</p>
-      </div>
-    );
+      return (
+        <h3>It's 40 in Salt Lake City!</h3>
+      );
   },
 });
 
-module.exports = WeatherMessage
+module.exports = WeatherMessage;
