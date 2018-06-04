@@ -6,7 +6,6 @@ const WeatherMessage = require('WeatherMessage');
 
 const openWeatherMap = require('openWeatherMap');
 
-
 const createReactClass = require('create-react-class');
 
 const Weather = createReactClass({
@@ -20,18 +19,20 @@ const Weather = createReactClass({
 
     this.setState({ isLoading: true });
 
-    openWeatherMap.getTemp(location).then((temp) => {
-      that.setState({
-        location,
-        temp,
-        isLoading: false,
-      });
-    }, (errorMessage) => {
-      that.setState({ isLoading: false });
-      alert(errorMessage);
-    });
+    openWeatherMap.getTemp(location).then(
+      (temp) => {
+        that.setState({
+          location,
+          temp,
+          isLoading: false,
+        });
+      },
+      (errorMessage) => {
+        that.setState({ isLoading: false });
+        alert(errorMessage);
+      },
+    );
   },
-
   render() {
     const { isLoading, temp, location } = this.state;
 
@@ -42,6 +43,7 @@ const Weather = createReactClass({
         return <WeatherMessage temp={temp} location={location} />;
       }
     }
+
     return (
       <div>
         <h3>Weather Component</h3>

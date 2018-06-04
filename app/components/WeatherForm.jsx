@@ -7,21 +7,11 @@ const WeatherForm = createReactClass({
     e.preventDefault();
 
     const location = this.refs.location.value;
-    // const message = this.refs.message.value;
-    // we check if the location is  valied, and if it is then we call the Parent search function for the location which is in the Parent Component- which is the Weather jsx file in our case.
     if (location.length > 0) {
       this.refs.location.value = '';
       this.props.onSearch(location);
     }
   },
-
-  //   if (message.length > 0) {
-  //     this.refs.message.value = '';
-  //     updates.message = message;
-  //   }
-
-  //   this.props.onNewData(updates);
-  // },
 
   render() {
     return (

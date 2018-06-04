@@ -26803,7 +26803,6 @@
 
 	var Main = createReactClass({
 	  displayName: 'Main',
-
 	  render: function render() {
 	    return React.createElement(
 	      'div',
@@ -26925,6 +26924,7 @@
 	        return React.createElement(WeatherMessage, { temp: temp, location: location });
 	      }
 	    }
+
 	    return React.createElement(
 	      'div',
 	      null,
@@ -26957,23 +26957,11 @@
 	    e.preventDefault();
 
 	    var location = this.refs.location.value;
-	    // const message = this.refs.message.value;
-	    // we check if the location is  valied, and if it is then we call the Parent search function for the location which is in the Parent Component- which is the Weather jsx file in our case.
 	    if (location.length > 0) {
 	      this.refs.location.value = '';
 	      this.props.onSearch(location);
 	    }
 	  },
-
-
-	  //   if (message.length > 0) {
-	  //     this.refs.message.value = '';
-	  //     updates.message = message;
-	  //   }
-
-	  //   this.props.onNewData(updates);
-	  // },
-
 	  render: function render() {
 	    return React.createElement(
 	      'div',
@@ -28611,48 +28599,20 @@
 
 	'use strict';
 
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
 	var React = __webpack_require__(1);
 
-	// const createReactClass = require('create-react-class');
+	var createReactClass = __webpack_require__(34);
 
-	// const About = createReactClass({
-	//   render() {
-	//     return (
-	//           <h3>This is the About Component</h3>
-	//     );
-	//   },
-	// });
-
-	var About = function (_React$Component) {
-	  _inherits(About, _React$Component);
-
-	  function About() {
-	    _classCallCheck(this, About);
-
-	    return _possibleConstructorReturn(this, (About.__proto__ || Object.getPrototypeOf(About)).apply(this, arguments));
+	var About = createReactClass({
+	  displayName: 'About',
+	  render: function render() {
+	    return React.createElement(
+	      'h3',
+	      null,
+	      'This is the About Component'
+	    );
 	  }
-
-	  _createClass(About, [{
-	    key: 'render',
-	    value: function render() {
-	      return React.createElement(
-	        'div',
-	        null,
-	        'It\'s the About page!'
-	      );
-	    }
-	  }]);
-
-	  return About;
-	}(React.Component);
+	});
 
 	module.exports = About;
 
