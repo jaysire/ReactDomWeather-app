@@ -11,27 +11,25 @@ const createReactClass = require('create-react-class');
 const Weather = createReactClass({
   getInitialState() {
     return {
-      isLoading: false,
-    };
+      isLoading: false
+    }
   },
   handleSearch(location) {
     const that = this;
 
-    this.setState({ isLoading: true });
+    this.setState({isLoading: true});
 
     openWeatherMap.getTemp(location).then(
       (temp) => {
         that.setState({
-          location,
-          temp,
-          isLoading: false,
+          location: location,
+          temp: temp,
+          isLoading: false
         });
-      },
-      (errorMessage) => {
-        that.setState({ isLoading: false });
+      }, function (errorMessage) {
+        that.setState({isLoading: false});
         alert(errorMessage);
-      },
-    );
+      });
   },
   render() {
     const { isLoading, temp, location } = this.state;
@@ -50,8 +48,8 @@ const Weather = createReactClass({
         <WeatherForm onSearch={this.handleSearch} />
         {renderMessage()}
       </div>
-    );
-  },
+    )
+  }
 });
 
 module.exports = Weather;

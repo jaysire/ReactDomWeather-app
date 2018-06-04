@@ -58,3 +58,4 @@ addPromise('josiah', 9).then((sum) => {
 // // NOTE: Since in these cases  we resolve or reject or call the callback right away, thus eliminating the need for using callback or Promise. Thus we fake the delay using setTimeout.
 // //  We fake/ simulate delay using setTimeout and it takes a function to run.
 // // 1000 miliseconds = 1 second.
+
