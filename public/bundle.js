@@ -26888,12 +26888,14 @@
 	  displayName: 'Weather',
 	  getInitialState: function getInitialState() {
 	    return {
-	      location: 'Miami',
-	      temp: 88
+	      isLoading: false
 	    };
 	  },
 	  handleSearch: function handleSearch(location) {
 	    var that = this;
+
+	    this.setState({ isLoading: true });
+
 	    openWeatherMap.getTemp(location).then(function (temp) {
 	      that.setState({
 	        location: location,
@@ -26902,17 +26904,19 @@
 	    }, function (errorMessage) {
 	      alert(errorMessage);
 	    });
-	    // this.setState({
-	    //   location,
-	    //   temp: 23,
-	    // });
 	  },
 	  render: function render() {
-	    // this is how you pull/ access the state values (in our case, temo and location), so you can pass them as props thru our WeatherMessage component. ES6 distructuring.
 	    var _state = this.state,
+	        isLoading = _state.isLoading,
 	        temp = _state.temp,
 	        location = _state.location;
 
+
+	    function renderMessage() {
+	      if (isLoading) {} else if (temp && location) {
+	        return React.createElement(WeatherMessage, { temp: temp, location: location });
+	      }
+	    }
 	    return React.createElement(
 	      'div',
 	      null,
@@ -26922,7 +26926,7 @@
 	        'Weather Component'
 	      ),
 	      React.createElement(WeatherForm, { onSearch: this.handleSearch }),
-	      React.createElement(WeatherMessage, { temp: temp, location: location })
+	      renderMessage()
 	    );
 	  }
 	});
