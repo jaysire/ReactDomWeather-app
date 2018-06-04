@@ -26970,7 +26970,6 @@
 	        'form',
 	        { onSubmit: this.onFormSubmit },
 	        React.createElement('input', { type: 'text', ref: 'location', placeholder: 'Enter city name' }),
-	        React.createElement('div', null),
 	        React.createElement(
 	          'button',
 	          null,
