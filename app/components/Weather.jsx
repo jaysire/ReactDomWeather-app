@@ -14,24 +14,24 @@ const Weather = createReactClass({
       isLoading: false
     }
   },
-  handleSearch(location) {
+  handleSearch: function (location) {
     const that = this;
 
     this.setState({isLoading: true});
 
-    openWeatherMap.getTemp(location).then(
-      (temp) => {
+    openWeatherMap.getTemp(location).then(function
+      (temp) {
         that.setState({
           location: location,
           temp: temp,
-          isLoading: false
+          isLoading: false,
         });
       }, function (errorMessage) {
         that.setState({isLoading: false});
         alert(errorMessage);
       });
   },
-  render() {
+  render: function () {
     const { isLoading, temp, location } = this.state;
 
     function renderMessage() {

@@ -26890,6 +26890,7 @@
 	      isLoading: false
 	    };
 	  },
+
 	  handleSearch: function handleSearch(location) {
 	    var that = this;
 
