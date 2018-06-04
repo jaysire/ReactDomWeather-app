@@ -17,37 +17,39 @@ const Weather = createReactClass({
   },
   handleSearch(location) {
     const that = this;
-    
-    this.setState({isLoading: true});
-    
+
+    this.setState({ isLoading: true });
+
     openWeatherMap.getTemp(location).then((temp) => {
       that.setState({
         location,
         temp,
+        isLoading: false,
       });
     }, (errorMessage) => {
+      that.setState({ isLoading: false });
       alert(errorMessage);
     });
   },
+
   render() {
     const { isLoading, temp, location } = this.state;
-    
+
     function renderMessage() {
       if (isLoading) {
-
-      }else if (temp && location) {
-        return  <WeatherMessage temp={temp} location={location} />
+        return <h3>Fetching weather...</h3>;
+      } else if (temp && location) {
+        return <WeatherMessage temp={temp} location={location} />;
+      }
     }
-}
     return (
-        <div>
+      <div>
         <h3>Weather Component</h3>
         <WeatherForm onSearch={this.handleSearch} />
         {renderMessage()}
-        </div>
+      </div>
     );
   },
 });
 
 module.exports = Weather;
-
