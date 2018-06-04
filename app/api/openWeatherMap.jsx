@@ -1,6 +1,6 @@
 const axios = require('axios');
 
-const OPEN_WEATHER_MAP_URL = 'http://samples.openweathermap.org/data/2.5/weather?appid=81c7332841c2fe9821643d0776f26900&units=imperial';
+const OPEN_WEATHER_MAP_URL = 'http://api.openweathermap.org/data/2.5/weather?appid=81c7332841c2fe9821643d0776f26900&units=imperial';
 
 
 // build url using new ES6 feature - template strings
@@ -11,7 +11,7 @@ module.exports = {
     const requestUrl = `${OPEN_WEATHER_MAP_URL}&q=${encodedLocation}`;
 
     // How to make the api request.
-    axios.get(requestUrl).then((response) => {
+    return axios.get(requestUrl).then((response) => {
       if (response.data.cod && response.data.message) {
         throw new Error(response.data.message);
       } else {
@@ -22,3 +22,4 @@ module.exports = {
     });
   },
 };
+

@@ -26888,12 +26888,20 @@
 	  displayName: 'Weather',
 	  getInitialState: function getInitialState() {
 	    return {
-	      location: "Miami",
+	      location: 'Miami',
 	      temp: 88
 	    };
 	  },
 	  handleSearch: function handleSearch(location) {
-	    openWeatherMap;
+	    var that = this;
+	    openWeatherMap.getTemp(location).then(function (temp) {
+	      that.setState({
+	        location: location,
+	        temp: temp
+	      });
+	    }, function (errorMessage) {
+	      alert(errorMessage);
+	    });
 	    // this.setState({
 	    //   location,
 	    //   temp: 23,
@@ -27014,7 +27022,7 @@
 
 	var axios = __webpack_require__(91);
 
-	var OPEN_WEATHER_MAP_URL = 'http://samples.openweathermap.org/data/2.5/weather?appid=81c7332841c2fe9821643d0776f26900&units=imperial';
+	var OPEN_WEATHER_MAP_URL = 'http://api.openweathermap.org/data/2.5/weather?appid=81c7332841c2fe9821643d0776f26900&units=imperial';
 
 	// build url using new ES6 feature - template strings
 	module.exports = {
@@ -27024,7 +27032,7 @@
 	    var requestUrl = OPEN_WEATHER_MAP_URL + '&q=' + encodedLocation;
 
 	    // How to make the api request.
-	    axios.get(requestUrl).then(function (response) {
+	    return axios.get(requestUrl).then(function (response) {
 	      if (response.data.cod && response.data.message) {
 	        throw new Error(response.data.message);
 	      } else {
