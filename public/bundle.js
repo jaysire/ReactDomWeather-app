@@ -26872,7 +26872,9 @@
 			React.createElement(
 				"p",
 				null,
-				"This is a weather application that I biuld on React. I have built this for The Complete React Web App Developer Course."
+				"This is a weather application that I biuld on React. ",
+				React.createElement("br", null),
+				" I have built this for The Complete React Web App Developer Course."
 			),
 			React.createElement(
 				"p",
