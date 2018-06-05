@@ -26931,6 +26931,8 @@
 
 	module.exports = Examples;
 
+	// This is where we added our grid.
+
 /***/ }),
 /* 254 */
 /***/ (function(module, exports, __webpack_require__) {
