@@ -25464,7 +25464,7 @@
 	    React.createElement(
 	      'h2',
 	      null,
-	      'Nav Component'
+	      'This is the Nav Component'
 	    ),
 	    React.createElement(
 	      IndexLink,
