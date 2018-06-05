@@ -14,7 +14,7 @@ names.forEach((name) => console.log(name));
 const returnMe =(name) => name + '!?!';
 console.log(returnMe(''));
 
- Anontmous functions have a 'this' binding while Arrow functions take on their parents this binding;
+//  Anontmous functions have a 'this' binding while Arrow functions take on their parents this binding;
 
 const person = {
   name: 'Josiah',
@@ -34,7 +34,7 @@ function add (a, b) {
 console.log(add(1, 3));
 console.log(add(9, 0));
 
-two different arrow functions. Use carly braces to specify the return value and the other one use the expression syntax and handle everything in one line
+// two different arrow functions. Use carly braces to specify the return value and the other one use the expression syntax and handle everything in one line;
 
 const  addStatement = (c, d) => {
   return c + d;
