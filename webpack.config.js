@@ -1,10 +1,10 @@
-const webpack = require('webpack');
+var webpack = require('webpack');
 
 module.exports = {
   entry: [
     'script!jquery/dist/jquery.min.js',
     'script!foundation-sites/dist/foundation.min.js',
-    './app/app.jsx',
+    './app/app.jsx'
   ],
   externals: {
     jquery: 'jQuery'
@@ -12,12 +12,12 @@ module.exports = {
   plugins: [
     new webpack.ProvidePlugin({
       '$': 'jquery',
-      'jQuery': 'jquery',
+      'jQuery': 'jquery'
     })
   ],
   output: {
     path: __dirname,
-    filename: './public/bundle.js',
+    filename: './public/bundle.js'
   },
   resolve: {
     root: __dirname,
@@ -31,8 +31,9 @@ module.exports = {
       Examples: 'app/components/Examples.jsx',
       openWeatherMap: 'app/api/openWeatherMap.jsx',
       ErrorModal: 'app/components/ErrorModal.jsx',
+      applicationStyles: 'app/styles/app.css'
     },
-    extensions: ['', '.js', '.jsx'],
+    extensions: ['', '.js', '.jsx']
   },
   module: {
     loaders: [
@@ -45,7 +46,6 @@ module.exports = {
         exclude: /(node_modules|bower_components)/
       }
     ]
-  }
+  },
+  devtool: 'cheap-module-eval-source-map'
 };
-
-// we imported webpack and installed jQuery.
