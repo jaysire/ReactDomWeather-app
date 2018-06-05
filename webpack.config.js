@@ -46,3 +46,5 @@ module.exports = {
     ]
   }
 };
+
+// we imported webpack and installed jQuery. 

@@ -108,7 +108,7 @@
 	var About = __webpack_require__(252);
 	var Examples = __webpack_require__(253);
 
-	// Load Foundation and fire it up!
+	// This is how we Load Foundation and fire it up!
 	__webpack_require__(254);
 	$(document).foundation();
 
@@ -25519,27 +25519,43 @@
 	var Nav = function Nav() {
 	  return React.createElement(
 	    'div',
-	    null,
+	    { className: 'top-bar' },
 	    React.createElement(
-	      'h2',
-	      null,
-	      'This is the Nav Component'
+	      'div',
+	      { className: 'top-bar-left' },
+	      React.createElement(
+	        'ul',
+	        { className: 'menu' },
+	        React.createElement(
+	          'li',
+	          null,
+	          React.createElement(
+	            IndexLink,
+	            { to: '/', activeClassName: 'active', activeStyle: { fontWeight: 'bold' } },
+	            'Get Weather'
+	          )
+	        ),
+	        React.createElement(
+	          'li',
+	          null,
+	          React.createElement(
+	            Link,
+	            { to: '/about', activeClassName: 'active', activeStyle: { fontWeight: 'bold' } },
+	            'About'
+	          )
+	        ),
+	        React.createElement(
+	          'li',
+	          null,
+	          React.createElement(
+	            Link,
+	            { to: '/examples', activeClassName: 'active', activeStyle: { fontWeight: 'bold' } },
+	            'Examples'
+	          )
+	        )
+	      )
 	    ),
-	    React.createElement(
-	      IndexLink,
-	      { to: '/', activeClassName: 'active', activeStyle: { fontWeight: 'bold' } },
-	      'Get Weather'
-	    ),
-	    React.createElement(
-	      Link,
-	      { to: '/about', activeClassName: 'active', activeStyle: { fontWeight: 'bold' } },
-	      'About'
-	    ),
-	    React.createElement(
-	      Link,
-	      { to: '/examples', activeClassName: 'active', activeStyle: { fontWeight: 'bold' } },
-	      'Examples'
-	    )
+	    React.createElement('div', { className: 'top-bar-right' })
 	  );
 	};
 
