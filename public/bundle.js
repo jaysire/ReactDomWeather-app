@@ -25588,7 +25588,7 @@
 	        React.createElement(
 	          'button',
 	          null,
-	          'Get Weather'
+	          'Get Weather Now'
 	        )
 	      )
 	    );
