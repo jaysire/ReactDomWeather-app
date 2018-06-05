@@ -25437,7 +25437,7 @@
 	    React.createElement(
 	      'h2',
 	      null,
-	      'Main Component'
+	      'This is the Main Component!'
 	    ),
 	    props.children
 	  );
