@@ -4,7 +4,7 @@ var {Link, IndexLink} = require('react-router');
 var Nav = React.createClass({
   onSearch: function (e) {
       e.preventDefault();
-      alert('Not yet wired up!');
+      alert('Moved on to Redux, not yet wired up!');
   },
   render: function () {
     return (
